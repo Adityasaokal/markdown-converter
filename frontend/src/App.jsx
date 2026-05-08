@@ -14,7 +14,7 @@ function App() {
 
   const fetchDocuments = async () => {
     try {
-      const response = await fetch('http://localhost:8000/documents/');
+      const response = await fetch('https://markdown-converter-ia6b.onrender.com/documents/');
       const data = await response.json();
       
       if (Array.isArray(data)) {
@@ -39,7 +39,7 @@ function App() {
         payload.id = currentDocId;
       }
 
-      const response = await fetch('http://localhost:8000/documents/', {
+      const response = await fetch('https://markdown-converter-ia6b.onrender.com/documents/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function App() {
     if (!isConfirmed) return;
 
     try {
-      await fetch(`http://localhost:8000/documents/${docId}`, {
+      await fetch(`https://markdown-converter-ia6b.onrender.com/documents/${docId}`, {
         method: 'DELETE',
       });
       
